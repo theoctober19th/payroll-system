@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>New Employee</title>
+  </head>
+
+
+
+
+  <body>
+
+    <div class="container mt-3">
+      
+      <nav class="nav nav-pills flex-column flex-sm-row">
+        <a class="flex-sm-fill text-sm-center nav-link active" href="#personalInfo" data-toggle="tab">Personal Information</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="#organizationInfo" data-toggle="tab">Organization</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="#salaryStructure" data-toggle="tab">Salary Structure</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="#setSalary" data-toggle="tab">Set Salaries</a>
+      </nav>
+
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="personalInfo" role="tabpanel" aria-labelledby="home-tab">
+          <form class="mt-3" id="addEmployeeForm">
+            <div class="form-group row">
+                <label for="inputID" class="col-sm-2 col-form-label">ID</label>
+                <div class="col-sm-2">
+                 <input type="text" class="form-control" id="inputID" name="id">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputEmployeeName" class="col-sm-2 col-form-label">Employee Name</label>
+                <div class="col-sm-6">
+                 <input type="text" class="form-control" id="inputEmployeeName" name="employeeName">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPost" class="col-sm-2 col-form-label">Post</label>
+                <div class="col-sm-5">
+                 <input type="text" class="form-control" id="inputPost" name="post">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputRank" class="col-sm-2 col-form-label">Rank</label>
+                <div class="col-sm-10">
+                  <select name="rank">
+                    <option value="test">Dummy Value</option>
+                  </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputRank" class="col-sm-2 col-form-label">Sex</label>
+                <div class="col-sm-10">
+                  <select name="sex">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputRank" class="col-sm-2 col-form-label">Marital Status</label>
+                <div class="col-sm-10">
+                  <select name="maritalStatus">
+                    <option value="married">Married</option>
+                    <option value="unmarried">Unmarried</option>
+                    <option value="widowed">Widowed</option>
+                    <option value="divorced">Divorced</option>
+                  </select>
+                </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="tab-pane fade" id="organizationInfo" role="tabpanel" aria-labelledby="profile-tab">
+          <div class="mt-3">
+            <div class="form-group row">
+                <label for="inputAppointedDate" class="col-sm-2 col-form-label">Appointed Date</label>
+                <div class="col-sm-4">
+                 <input type="date" class="form-control" id="inputAppointedDate" name="appointedDate" form="addEmployeeForm">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPermanentDate" class="col-sm-2 col-form-label">Permanent Date</label>
+                <div class="col-sm-4">
+                 <input type="date" class="form-control" id="inputPermanentDate" name="permanentDate" form="addEmployeeForm">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputLeftDate" class="col-sm-2 col-form-label">Retirement/Resigned Date</label>
+                <div class="col-sm-4">
+                 <input type="date" class="form-control" id="inputLeftDate" name="leftDate" form="addEmployeeForm">
+                </div>
+                <div class="col-sm-2">
+                  <button form="addEmployeeForm">Update</button>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputBranch" class="col-sm-2 col-form-label">Branch</label>
+                <div class="col-sm-2">
+                  <select name="branch" id="inputBranch" form="addEmployeeForm">
+                    <option value="test">Dummy Value</option>
+                  </select>
+                </div>
+                <div class="col-sm-2">
+                  <input type="text" name="branchManual" form="addEmployeeForm">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputDivision" class="col-sm-2 col-form-label">Division</label>
+                <div class="col-sm-2">
+                  <select name="division" id="inputDivision" form="addEmployeeForm">
+                    <option value="test">Dummy Value</option>
+                  </select>
+                </div>
+                <div class="col-sm-2">
+                  <input type="text" name="divisionManual" form="addEmployeeForm">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputEncashPolicyType" class="col-sm-2 col-form-label">Encash Policy Type</label>
+                <div class="col-sm-2">
+                  <select name="encashPolicyType" id="inputEncashPolicyType" form="addEmployeeForm">
+                    <option value="test">Dummy Value</option>
+                  </select>
+                </div>
+                <div class="col-sm-2">
+                  <input type="text" name="encashPolicyTypeManual" form="addEmployeeForm">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputEmployeeType" class="col-sm-2 col-form-label">Employee Type</label>
+                <div class="col-sm-2">
+                  <select name="employeeType" id="inputEmployeeType" form="addEmployeeForm">
+                    <option value="test">Dummy Value</option>
+                  </select>
+                </div>
+                <div class="col-sm-2">
+                  <input type="text" name="employeeTypeManual" form="addEmployeeForm">
+                </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="salaryStructure" role="tabpanel" aria-labelledby="contact-tab">
+          <div class="row">
+            <div class="col-sm-4">
+                  <div class="mt-3">
+                    <div class="row">
+                        <div class="col">
+                          <label for="inputBankAccountNumber">Bank Account Number</label>
+                        </div>
+                        <div class="col">
+                         <input type="text" class="form-control" id="inputBankAccountNumber" name="bankAccountNumber">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                          <label for="inputPanNumber">PAN Number</label>
+                        </div>
+                        <div class="col">
+                         <input type="text" class="form-control" id="inputPanNumber" name="panNumber">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                          <label for="inputCITNumber">CIT Number</label>
+                        </div>
+                        <div class="col">
+                         <input type="text" class="form-control" id="inputCITNumber" name="citNumber">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                          <label for="inputPFAccountNumber">PF Account Number</label>
+                        </div>
+                        <div class="col">
+                         <input type="text" class="form-control" id="inputPFAccountNumber" name="pfAccountNumber">
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col">
+                          <label for="inputNewMonthlyCITAmount">New Monthly CIT Amount</label>
+                        </div>
+                        <div class="col">
+                         <input type="text" class="form-control" id="inputNewMonthlyCITAmount" name="newMonthlyCITAmount">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                          <label for="inputLessInsurance">Less Insurance</label>
+                        </div>
+                        <div class="col">
+                         <input type="text" class="form-control" id="inputLessInsurance" name="lessInsurance">
+                        </div>
+                        <div class="col">
+                          <button>Add Insurance</button>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-sm-8 mt-3">
+              <div class="row-sm-8">
+                <h6><center>Employee Detail</center></h6>
+                <table class="table table-sm table-hover table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">EmpType</th>
+                      <th scope="col">compensation_head</th>
+                      <th scope="col">fromdate</th>
+                      <th scope="col">todate</th>
+                      <th scope="col">Amount</th>
+                      <th scope="col">tmonth</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>...</td>
+                      <td>...</td>
+                      <td>...</td>
+                      <td>...</td>
+                      <td>...</td>
+                      <td>...</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="row">
+                <div class="col-sm-3">
+                  <label for="inputCompID">Comp ID</label>
+                  <input type="text" class="form-control" id="inputCompID" name="compID">
+                </div>
+                <div class="col-sm-3">
+                  <label for="inputFromDate">From Date</label>
+                  <input type="date" class="form-control" id="inputFromDate" name="fromDate">
+                </div>
+                <div class="col-sm-3">
+                  <label for="inputToDate">To Date</label>
+                  <br>
+                  <input type="date" class="form-control" id="inputToDate" name="toDate">
+                </div>
+                 <div class="col-sm-3">
+                  <label for="inputAmount">Amount</label>
+                  <br>
+                  <input type="number" class="form-control" id="inputAmount" name="amount">
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col" align="right">
+                  <rt><button type="button">Update</button>
+                  <button type="button">Delete</button></rt>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="setSalary" role="tabpanel" aria-labelledby="contact-tab">
+          <div class="row">
+            <div class="col-sm-3">
+                  <div class="mt-3">
+                    <div class="row">
+                        <div class="col">
+                          <label for="inputCompensation">Compensation</label>
+                        </div>
+                        <div class="col">
+                          <select name="compensation" id="inputCompensation" form="addEmployeeForm">
+                            <option value="test">Dummy Value</option>
+                          </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                          <label for="inputFromDate">From Date</label>
+                        </div>
+                        <div class="col">
+                         <input type="date" class="form-control" id="inputFromDate" name="fromDate">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                          <label for="inputToDate">To Date</label>
+                        </div>
+                        <div class="col">
+                         <input type="date" class="form-control" id="inputToDate" name="toDate">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                          <label for="inputRateAmount">Rate Amount</label>
+                        </div>
+                        <div class="col">
+                         <input type="text" class="form-control" id="inputRateAmount" name="rateAmount">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                          <label for="inputEmployeeType">Employee Type</label>
+                        </div>
+                        <div class="col">
+                          <select name="employeeType" id="input" form="addEmployeeForm">
+                            <option value="test">Dummy Value</option>
+                          </select>
+                        </div>
+                    </div>
+                    <div align="right"> <button>Add</button></div>
+                  </div>
+            </div>
+
+            <div class="col-sm-3 mt-3">
+              <div class="row">
+                  <div class="col">
+                    <label for="inputBasicSalary">Basic Salary</label>
+                  </div>
+                  <div class="col">
+                   <input type="text" class="form-control" id="inputBasicSalary" name="basicSalary">
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col">
+                    <label for="inputPFAmount">PF Amount</label>
+                  </div>
+                  <div class="col">
+                   <input type="text" class="form-control" id="inputPFAmount" name="pfAmount">
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col">
+                    <label for="inputDearAllowance">Dear Allowance</label>
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control" id="inputDearAllowance" name="dearAllowance">
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col">
+                    <label for="inputHardshipAllowance">Program/Hardship Allowance</label>
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control" id="inputHardshipAllowance" name="hardshipAllowance">
+                  </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 mt-3">
+              <h6><center>Leave Without Pay</center></h6>
+                <table class="table table-sm table-hover table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">StaffCode</th>
+                      <th scope="col">LeaveDate</th>
+                      <th scope="col">LWP_Days</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>...</td>
+                      <td>...</td>
+                      <td>...</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Buttons Section -->
+      <div class="mt-5" align="center">
+          <center><button type="button" class="btn btn-success" form="addEmployeeForm">New</button>
+          <button type="submit" class="btn btn-primary" form="addEmployeeForm">Submit</button>
+          <button type="reset" class="btn btn-danger" form="addEmployeeForm">Delete</button></center>
+
+      </div>
+
+
+    </div>
+
+
+
+    <!-- For Tabs -->
+    <script type="text/javascript">
+      $('#myTab a').on('click', function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+      })
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>
