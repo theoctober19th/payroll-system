@@ -1,4 +1,8 @@
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
 <!DOCTYPE html>
+
+
 
 <%@ attribute name="title" required="true" %>
 <html lang="en">
@@ -97,6 +101,14 @@
                     <li><a href="leave_without_pay">Leave Without Pay</a>
                     </li>
                     <li><a href="staff_insurance">Staff Insurance</a>
+                    </li>
+                  </ul>
+                </li>
+                
+                <li><a><i class="fa fa-edit"></i> User Settings <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu" style="display: none">
+                  
+                    <li><a href="<spring:url value="/user/add_user"/>">Add User</a>
                     </li>
                   </ul>
                 </li>

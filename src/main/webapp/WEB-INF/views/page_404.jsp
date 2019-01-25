@@ -1,6 +1,6 @@
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
 
-<<tags:header></tags:header>
+<tags:header title="Page Not Found"></tags:header>
 
 <!-- page content -->
       <div class="col-md-12">

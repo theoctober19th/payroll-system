@@ -155,119 +155,120 @@
 					</div>
 		     
 		     		<div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab2">
+		     		
 		     			<div class="row">
-		            <div class="col-sm-4">
-		                  <div class="mt-3">
-		                    <div class="row">
-		                        <div class="col">
-		                          <label for="inputBankAccountNumber">Bank Account Number</label>
-		                        </div>
-		                        <div class="col">
-		                         <input type="text" class="form-control" id="inputBankAccountNumber" name="bankAccountNumber">
-		                        </div>
-		                    </div>
-		                    <div class="row">
-		                        <div class="col">
-		                          <label for="inputPanNumber">PAN Number</label>
-		                        </div>
-		                        <div class="col">
-		                         <input type="text" class="form-control" id="inputPanNumber" name="panNumber">
-		                        </div>
-		                    </div>
-		                    <div class="row">
-		                        <div class="col">
-		                          <label for="inputCITNumber">CIT Number</label>
-		                        </div>
-		                        <div class="col">
-		                         <input type="text" class="form-control" id="inputCITNumber" name="citNumber">
-		                        </div>
-		                    </div>
-		                    <div class="row">
-		                        <div class="col">
-		                          <label for="inputPFAccountNumber">PF Account Number</label>
-		                        </div>
-		                        <div class="col">
-		                         <input type="text" class="form-control" id="inputPFAccountNumber" name="pfAccountNumber">
-		                        </div>
-		                    </div>
-		                    <div class="row mt-5">
-		                        <div class="col">
-		                          <label for="inputNewMonthlyCITAmount">New Monthly CIT Amount</label>
-		                        </div>
-		                        <div class="col">
-		                         <input type="text" class="form-control" id="inputNewMonthlyCITAmount" name="newMonthlyCITAmount">
-		                        </div>
-		                    </div>
-		                    <div class="row">
-		                        <div class="col">
-		                          <label for="inputLessInsurance">Less Insurance</label>
-		                        </div>
-		                        <div class="col">
-		                         <input type="text" class="form-control" id="inputLessInsurance" name="lessInsurance">
-		                        </div>
-		                        <div class="col">
-		                          <button>Add Insurance</button>
-		                        </div>
-		                    </div>
-		                  </div>
-		            </div>
-		            <div class="col-sm-8 mt-3">
-		              <div class="row-sm-8">
-		                <h6><center>Employee Detail</center></h6>
-		                <table class="table table-sm table-hover table-bordered table-striped">
-		                  <thead>
-		                    <tr>
-		                      <th scope="col">#</th>
-		                      <th scope="col">EmpType</th>
-		                      <th scope="col">compensation_head</th>
-		                      <th scope="col">fromdate</th>
-		                      <th scope="col">todate</th>
-		                      <th scope="col">Amount</th>
-		                      <th scope="col">tmonth</th>
-		                    </tr>
-		                  </thead>
-		                  <tbody>
-		                    <tr>
-		                      <th scope="row">1</th>
-		                      <td>...</td>
-		                      <td>...</td>
-		                      <td>...</td>
-		                      <td>...</td>
-		                      <td>...</td>
-		                      <td>...</td>
-		                    </tr>
-		                  </tbody>
-		                </table>
-		              </div>
-		              <div class="row">
-		                <div class="col-sm-3">
-		                  <label for="inputCompID">Comp ID</label>
-		                  <input type="text" class="form-control" id="inputCompID" name="compID">
-		                </div>
-		                <div class="col-sm-3">
-		                  <label for="inputFromDate">From Date</label>
-		                  <input type="date" class="form-control" id="inputFromDate" name="fromDate">
-		                </div>
-		                <div class="col-sm-3">
-		                  <label for="inputToDate">To Date</label>
-		                  <br>
-		                  <input type="date" class="form-control" id="inputToDate" name="toDate">
-		                </div>
-		                 <div class="col-sm-3">
-		                  <label for="inputAmount">Amount</label>
-		                  <br>
-		                  <input type="number" class="form-control" id="inputAmount" name="amount">
-		                </div>
-		              </div>
-		              <div class="row mt-3">
-		                <div class="col" align="right">
-		                  <rt><button type="button">Update</button>
-		                  <button type="button">Delete</button></rt>
-		                </div>
-		              </div>
-		            </div>
-		          </div>
-		      
+				            <div class="col-sm-4">
+				                  <div class="mt-3">
+				                    <div class="row">
+				                        <div class="col">
+				                          <label for="inputBankAccountNumber">Bank Account Number</label>
+				                        </div>
+				                        <div class="col">
+				                         <input type="text" class="form-control" id="inputBankAccountNumber" name="bankAccountNumber">
+				                        </div>
+				                    </div>
+				                    <div class="row">
+				                        <div class="col">
+				                          <label for="inputPanNumber">PAN Number</label>
+				                        </div>
+				                        <div class="col">
+				                         <input type="text" class="form-control" id="inputPanNumber" name="panNumber">
+				                        </div>
+				                    </div>
+				                    <div class="row">
+				                        <div class="col">
+				                          <label for="inputCITNumber">CIT Number</label>
+				                        </div>
+				                        <div class="col">
+				                         <input type="text" class="form-control" id="inputCITNumber" name="citNumber">
+				                        </div>
+				                    </div>
+				                    <div class="row">
+				                        <div class="col">
+				                          <label for="inputPFAccountNumber">PF Account Number</label>
+				                        </div>
+				                        <div class="col">
+				                         <input type="text" class="form-control" id="inputPFAccountNumber" name="pfAccountNumber">
+				                        </div>
+				                    </div>
+				                    <div class="row mt-5">
+				                        <div class="col">
+				                          <label for="inputNewMonthlyCITAmount">New Monthly CIT Amount</label>
+				                        </div>
+				                        <div class="col">
+				                         <input type="text" class="form-control" id="inputNewMonthlyCITAmount" name="newMonthlyCITAmount">
+				                        </div>
+				                    </div>
+				                    <div class="row">
+				                        <div class="col">
+				                          <label for="inputLessInsurance">Less Insurance</label>
+				                        </div>
+				                        <div class="col">
+				                         <input type="text" class="form-control" id="inputLessInsurance" name="lessInsurance">
+				                        </div>
+				                        <div class="col">
+				                          <button>Add Insurance</button>
+				                        </div>
+				                    </div>
+				                  </div>
+				            </div>
+				            <div class="col-sm-8 mt-3">
+				              <div class="row-sm-8">
+				                <h6><center>Employee Detail</center></h6>
+				                <table class="table table-sm table-hover table-bordered table-striped">
+				                  <thead>
+				                    <tr>
+				                      <th scope="col">#</th>
+				                      <th scope="col">EmpType</th>
+				                      <th scope="col">compensation_head</th>
+				                      <th scope="col">fromdate</th>
+				                      <th scope="col">todate</th>
+				                      <th scope="col">Amount</th>
+				                      <th scope="col">tmonth</th>
+				                    </tr>
+				                  </thead>
+				                  <tbody>
+				                    <tr>
+				                      <th scope="row">1</th>
+				                      <td>...</td>
+				                      <td>...</td>
+				                      <td>...</td>
+				                      <td>...</td>
+				                      <td>...</td>
+				                      <td>...</td>
+				                    </tr>
+				                  </tbody>
+				                </table>
+				              </div>
+				              <div class="row">
+				                <div class="col-sm-3">
+				                  <label for="inputCompID">Comp ID</label>
+				                  <input type="text" class="form-control" id="inputCompID" name="compID">
+				                </div>
+				                <div class="col-sm-3">
+				                  <label for="inputFromDate">From Date</label>
+				                  <input type="date" class="form-control" id="inputFromDate" name="fromDate">
+				                </div>
+				                <div class="col-sm-3">
+				                  <label for="inputToDate">To Date</label>
+				                  <br>
+				                  <input type="date" class="form-control" id="inputToDate" name="toDate">
+				                </div>
+				                 <div class="col-sm-3">
+				                  <label for="inputAmount">Amount</label>
+				                  <br>
+				                  <input type="number" class="form-control" id="inputAmount" name="amount">
+				                </div>
+				              </div>
+				              <div class="row mt-3">
+				                <div class="col" align="right">
+				                  <rt><button type="button">Update</button>
+				                  <button type="button">Delete</button></rt>
+				                </div>
+				              </div>
+				            </div>
+				          </div>
+				      
 		     		</div>
 		     		
 		     		<div role="tabpanel" class="tab-pane fade" id="tab_content4" aria-labelledby="profile-tab3">
