@@ -22,6 +22,8 @@
 
   <link href="${pageContext.request.contextPath }/resources/fonts/css/font-awesome.min.css" rel="stylesheet">
   <link href="${pageContext.request.contextPath }/resources/css/animate.min.css" rel="stylesheet">
+  
+  <link href = "https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 
   <!-- Custom styling plus plugins -->
   <link href="${pageContext.request.contextPath }/resources/css/custom.css" rel="stylesheet">
@@ -76,31 +78,31 @@
                 </li>
                 <li><a><i class="fa fa-home"></i> Settings <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
-                    <li><a href="fiscal_year_settings">Fiscal Year Settings</a>
+                    <li><a href="<spring:url value="/fiscal_year_settings"/>">Fiscal Year Settings</a>
                     </li>
-                    <li><a href="office_settings">Office Settings</a>
+                    <li><a href="<spring:url value="/office_settings"/>">Office Settings</a>
                     </li>
-                    <li><a href="add_branch">Add Branch</a>
+                    <li><a href="<spring:url value="/add_branch"/>">Add Branch</a>
                     </li>
-                    <li><a href="division_setting">Division Settings</a>
+                    <li><a href="<spring:url value="/division_setting"/>">Division Settings</a>
                     </li>
-                    <li><a href="employee_type">Employee Type</a>
+                    <li><a href="<spring:url value="/employee_type"/>">Employee Type</a>
                     </li>
-                    <li><a href="compensation_setting">Compensation Settings</a>
+                    <li><a href="<spring:url value="/compensation_setting"/>">Compensation Settings</a>
                     </li>
-                    <li><a href="insurance_company_list">Insurance Company List</a>
+                    <li><a href="<spring:url value="/insurance_company_list"/>">Insurance Company List</a>
                     </li>
                   </ul>
                 </li>
                 <li><a><i class="fa fa-edit"></i> Employee Entry <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
-                    <li><a href="add_employee">New Employee</a>
+                    <li><a href="<spring:url value="/add_employee"/>">New Employee</a>
                     </li>
-                    <li><a href="employee_leave_policy">Employee Leave Policy</a>
+                    <li><a href="<spring:url value="/employee_leave_policy"/>">Employee Leave Policy</a>
                     </li>
-                    <li><a href="leave_without_pay">Leave Without Pay</a>
+                    <li><a href="<spring:url value="/leave_without_pay"/>">Leave Without Pay</a>
                     </li>
-                    <li><a href="staff_insurance">Staff Insurance</a>
+                    <li><a href="<spring:url value="/staff_insurance"/>">Staff Insurance</a>
                     </li>
                   </ul>
                 </li>
@@ -109,6 +111,8 @@
                   <ul class="nav child_menu" style="display: none">
                   
                     <li><a href="<spring:url value="/user/add_user"/>">Add User</a>
+                    </li>
+                    <li><a href="<spring:url value="/user/allUsers"/>">View Users</a>
                     </li>
                   </ul>
                 </li>

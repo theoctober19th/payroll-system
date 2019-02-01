@@ -3,8 +3,11 @@ package com.spring.payroll.entities;
 public class UserAddressInfo {
 
 	private int id;
-	private String province;
-	private String district;
+	private int provinceID;
+	private String provinceName;
+	private int districtID;
+	private String districtName;
+	private int villageMunicipalityID;
 	private String villageMunicipality;
 	private String localBodyType;
 	private int wardNumber;
@@ -22,20 +25,46 @@ public class UserAddressInfo {
 		this.id = id;
 	}
 
-	public String getProvince() {
-		return province;
+	
+
+	public String getProvinceName() {
+		return provinceName;
 	}
 
-	public void setProvince(String province) {
-		this.province = province;
+	public void setProvinceName(String provinceName) {
+		this.provinceName = provinceName;
 	}
 
-	public String getDistrict() {
-		return district;
+	public String getDistrictName() {
+		return districtName;
 	}
 
-	public void setDistrict(String district) {
-		this.district = district;
+	public void setDistrictName(String districtName) {
+		this.districtName = districtName;
+	}
+
+	public int getProvinceID() {
+		return provinceID;
+	}
+
+	public void setProvinceID(int provinceID) {
+		this.provinceID = provinceID;
+	}
+
+	public int getDistrictID() {
+		return districtID;
+	}
+
+	public void setDistrictID(int districtID) {
+		this.districtID = districtID;
+	}
+
+	public int getVillageMunicipalityID() {
+		return villageMunicipalityID;
+	}
+
+	public void setVillageMunicipalityID(int villageMunicipalityID) {
+		this.villageMunicipalityID = villageMunicipalityID;
 	}
 
 	public String getVillageMunicipality() {
@@ -69,6 +98,21 @@ public class UserAddressInfo {
 	public void setStreetAddress(String streetAddress) {
 		this.streetAddress = streetAddress;
 	}
+
+	@Override
+	public String toString() {
+		return "UserAddressInfo [id=" + id + ", provinceID=" + provinceID + ", provinceName=" + provinceName
+				+ ", districtID=" + districtID + ", districtName=" + districtName + ", villageMunicipalityID="
+				+ villageMunicipalityID + ", villageMunicipality=" + villageMunicipality + ", localBodyType="
+				+ localBodyType + ", wardNumber=" + wardNumber + ", streetAddress=" + streetAddress + "]";
+	}
+
+//	@Override
+//	public String toString() {		
+//		return villageMunicipality + "-" + wardNumber + ", " + districtName + ", " + provinceName;
+//	}
+	
+	
 	
 	
 

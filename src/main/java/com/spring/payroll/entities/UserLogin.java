@@ -4,8 +4,10 @@ public class UserLogin {
 
 	private int id;
 	private String username;
+	private String password;
 	private String passwordSalt;
 	private String passwordHash;
+	private int userID;
 	
 	
 	public UserLogin() {
@@ -51,6 +53,25 @@ public class UserLogin {
 	public void setPasswordHash(String passwordHash) {
 		this.passwordHash = passwordHash;
 	}
+
+
+	@Override
+	public String toString() {
+		return "UserLogin [id=" + id + ", username=" + username + ", password=" + password + ", passwordSalt="
+				+ passwordSalt + ", passwordHash=" + passwordHash + "]";
+	}
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	
 
 	
 }

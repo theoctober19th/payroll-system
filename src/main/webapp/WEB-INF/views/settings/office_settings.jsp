@@ -1,14 +1,17 @@
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <tags:header title="Office Settings"/>
 
 
     <div class="container">
+    
+    <b style="color:${messageColor};">${message }</b>
 
 
       <div class="card" style="width: 32rem;">
         <div class="card-body">
-          <form>
+          <form action='<spring:url value="/updateOfficeSettings"></spring:url>' method="post">
             <div class="row">
               <div class="form-group">
                 <div class="col">
@@ -48,7 +51,7 @@
                   <label for="inputGovernmentRegionalTaxDiscountAmount">Government Regional Tax Discount Amount</label>
                 </div>
                 <div class="col">
-                 <input type="text" class="form-control" id="inputGovernmentRegionalTaxDiscountAmount" name="governmentRegionalTaxDiscountAmount">
+                 <input type="number" step="any" class="form-control" id="inputGovernmentRegionalTaxDiscountAmount" name="regGovtDiscountAmt">
                 </div>
               </div>
             </div>

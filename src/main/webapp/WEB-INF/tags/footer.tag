@@ -42,6 +42,7 @@
   <script src="${pageContext.request.contextPath }/resources/js/chartjs/chart.min.js"></script>
 
   <script src="${pageContext.request.contextPath }/resources/js/custom.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
 
   <!-- flot js -->
@@ -55,6 +56,9 @@
   <script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/flot/jquery.flot.stack.js"></script>
   <script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/flot/curvedLines.js"></script>
   <script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/flot/jquery.flot.resize.js"></script>
+  
+
+  
   <script>
     $(document).ready(function() {
       // [17, 74, 6, 39, 20, 85, 7]
