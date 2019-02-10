@@ -65,5 +65,11 @@ public class OfficeDaoImpl implements OfficeDao {
 		return true;
 	}
 
+	@Override
+	public int getBranchCount() {
+		sql = "SELECT COUNT(*) FROM tblbranch";
+		return 0;
+	}
+
 
 }

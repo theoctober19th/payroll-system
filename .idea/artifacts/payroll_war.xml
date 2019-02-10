@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="payroll:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>payroll</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="payroll-1.0.0-BUILD-SNAPSHOT.war">
+      <element id="artifact" artifact-name="payroll:war exploded" />
+    </root>
+  </artifact>
+</component>

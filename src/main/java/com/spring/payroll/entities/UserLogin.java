@@ -19,6 +19,18 @@ public class UserLogin {
 		return id;
 	}
 
+    
+	
+	
+	public int getUserID() {
+		return userID;
+	}
+
+
+	public void setUserID(int userID) {
+		this.userID = userID;
+	}
+
 
 	public void setId(int id) {
 		this.id = id;

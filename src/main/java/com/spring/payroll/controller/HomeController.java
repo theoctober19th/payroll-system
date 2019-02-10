@@ -4,67 +4,98 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.context.request.WebRequest;
+
+import com.spring.payroll.entities.User;
+import com.spring.payroll.service.OfficeService;
+import com.spring.payroll.service.StaffService;
+import com.spring.payroll.service.UserService;
 
 /**
  * Handles requests for the application home page.
  */
 @Controller
+@SessionAttributes("userSession")
 public class HomeController {
+	
+	@Autowired
+	StaffService staffService;
+	
+	@Autowired
+	UserService userService;
+	
+	@Autowired
+	OfficeService officeService;
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
+	
+	@RequestMapping(value="/", method = RequestMethod.GET)
+	public String loginPage(Model model) {
+		return "index";
+	}
+	
+	@RequestMapping(value="/login", method = RequestMethod.POST)
+	public String doLogin(Model model, HttpServletRequest request) {
+		try {
+			String username = request.getParameter("username");
+			String password = request.getParameter("password");
+			if(userService.verifyUser(username, password)) {
+				
+				User currentUser = userService.getUserByUsername(username);
+				
+				model.addAttribute("userSession", currentUser);
+				return "redirect:/home";
+			}else {
+				return "redirect:/";
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+			return "redirect:/";
+		}
+	}
+	
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public String homePage(Locale locale, Model model) {
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+		model.addAttribute("staffCount", staffService.getStaffCount());
+		model.addAttribute("userCount", userService.getUsersCount());
 		return "home";
+		
 	}
 	
-
-	
-	@RequestMapping(value = "/fiscal_year_settings", method = RequestMethod.GET)
-	public String fiscalYearSettings(Locale locale, Model model) {
-		return "settings/fiscal_year_settings";
-	}
-	
-	
-	@RequestMapping(value = "/compensation_setting", method = RequestMethod.GET)
-	public String compensationSetting(Locale locale, Model model) {
-		return "settings/compensation_setting";
-	}
-	
-	@RequestMapping(value = "/division_setting", method = RequestMethod.GET)
-	public String divisionSetting(Locale locale, Model model) {
-		return "settings/division_setting";
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(WebRequest request, SessionStatus status) {
+		
+		status.setComplete();
+	    request.removeAttribute("userSession", WebRequest.SCOPE_SESSION);
+		
+		return "redirect:/";
 	}
 	
 	
-	@RequestMapping(value = "/insurance_company_list", method = RequestMethod.GET)
-	public String insuranceCompanyList(Locale locale, Model model) {
-		return "settings/insurance_company_list";
-	}
 	
-	
-	@RequestMapping(value = "/employee_leave_policy", method = RequestMethod.GET)
-	public String employeeLeavePolicy(Locale locale, Model model) {
-		return "employee_entry/employee_leave_policy";
-	}
-	
-	@RequestMapping(value = "/leave_without_pay", method = RequestMethod.GET)
-	public String leaveWithoutPay(Locale locale, Model model) {
-		return "employee_entry/leave_without_pay";
-	}
-	
-	@RequestMapping(value = "/staff_insurance", method = RequestMethod.GET)
-	public String staffInsurance(Locale locale, Model model) {
-		return "employee_entry/staff_insurance";
-	}
 	
 }

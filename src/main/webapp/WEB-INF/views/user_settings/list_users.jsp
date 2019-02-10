@@ -35,8 +35,8 @@
 						<td>${user.phoneNumber }</td>
 						<td>${user.email }</td>
 						<td>
-							<a href="<spring:url value='/user/editUser/${user.id }'/>" class="btn btn-success">Edit</button>
-							<a href="<spring:url value='/user/deleteUser/${user.id }'/>" onclick="return confirm('This item is going to be deleted. This cannot be undone.')" class="btn btn-danger">Delete</button>
+							<a href="<spring:url value='/user/editUser/${user.id }'/>" class="btn btn-success">Edit</button></a>
+							<a href="<spring:url value='/user/deleteUser/${user.id }'/>" onclick="return confirm('This item is going to be deleted. This cannot be undone.')" class="btn btn-danger">Delete</button></a>
 						</td>
 					</tr>
 				</c:forEach>

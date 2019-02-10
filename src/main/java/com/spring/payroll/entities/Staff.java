@@ -9,6 +9,7 @@ public class Staff {
 	private String sex;
 	private String maritalStatus;
 	private String maritalStatusYN;
+	
 	private String appointedDate;
 	private String permanentDate;
 	private String retirementDate;
@@ -20,7 +21,7 @@ public class Staff {
 	private String pFac;
 	private int branchID;
 	private int divCode;
-	private int empType;
+	private int encashPolicyType;
 	private double basicSalary;
 	private double gradeAmount;
 	private double spAllowance;
@@ -224,13 +225,16 @@ public class Staff {
 	}
 
 
-	public int getEmpType() {
-		return empType;
+	
+
+
+	public int getEncashPolicyType() {
+		return encashPolicyType;
 	}
 
 
-	public void setEmpType(int empType) {
-		this.empType = empType;
+	public void setEncashPolicyType(int encashPolicyType) {
+		this.encashPolicyType = encashPolicyType;
 	}
 
 

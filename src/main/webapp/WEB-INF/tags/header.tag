@@ -1,7 +1,16 @@
-<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 
+
+<%
+	session = request.getSession(false);
+	
+	if(session.getAttribute("userSession") == null){
+		response.sendRedirect(request.getContextPath());
+	}
+%>
 
 
 <%@ attribute name="title" required="true" %>
@@ -49,7 +58,7 @@
         <div class="left_col scroll-view">
 
           <div class="navbar nav_title" style="border: 0;">
-            <a href="${pageContext.request.contextPath }" class="site_title"><i class="fa fa-paw"></i> <span>PayRoll System</span></a>
+            <a href="<spring:url value="/home"/>" class="site_title"><i class="fa fa-paw"></i> <span>PayRoll System</span></a>
           </div>
           <div class="clearfix"></div>
 
@@ -60,7 +69,7 @@
             </div>
             <div class="profile_info">
               <span>Welcome,</span>
-              <h2>Bikalpa Dhakal</h2>
+              <h2>${userSession}</h2>
             </div>
           </div>
           <!-- /menu prile quick info -->
@@ -73,7 +82,7 @@
             <div class="menu_section">
               <h3>Menu</h3>
               <ul class="nav side-menu">
-                <li><a href="home.jsp"><i class="fa fa-home"></i> Home</a>
+                <li><a href="<spring:url value="/home"/>"><i class="fa fa-home"></i> Home</a>
                  
                 </li>
                 <li><a><i class="fa fa-home"></i> Settings <span class="fa fa-chevron-down"></span></a>
@@ -86,36 +95,41 @@
                     </li>
                     <li><a href="<spring:url value="/division_setting"/>">Division Settings</a>
                     </li>
-                    <li><a href="<spring:url value="/employee_type"/>">Employee Type</a>
-                    </li>
                     <li><a href="<spring:url value="/compensation_setting"/>">Compensation Settings</a>
                     </li>
                     <li><a href="<spring:url value="/insurance_company_list"/>">Insurance Company List</a>
                     </li>
                   </ul>
                 </li>
-                <li><a><i class="fa fa-edit"></i> Employee Entry <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-edit"></i> Employee Settings <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
-                    <li><a href="<spring:url value="/add_employee"/>">New Employee</a>
+                  	<li><a href="<spring:url value="/employee/all"/>">View Employees</a>
                     </li>
-                    <li><a href="<spring:url value="/employee_leave_policy"/>">Employee Leave Policy</a>
+                    <li><a href="<spring:url value="/employee/add_employee"/>">New Employee</a>
                     </li>
-                    <li><a href="<spring:url value="/leave_without_pay"/>">Leave Without Pay</a>
+                     <li><a href="<spring:url value="employee/employee_type"/>">Employee Type</a>
                     </li>
-                    <li><a href="<spring:url value="/staff_insurance"/>">Staff Insurance</a>
+                    <li><a href="<spring:url value="/employee/employee_leave_policy"/>">Employee Leave Policy</a>
+                    </li>
+                    <li><a href="<spring:url value="/employee/leave_without_pay"/>">Leave Without Pay</a>
+                    </li>
+                    <li><a href="<spring:url value="/employee/staff_insurance"/>">Staff Insurance</a>
                     </li>
                   </ul>
                 </li>
                 
-                <li><a><i class="fa fa-edit"></i> User Settings <span class="fa fa-chevron-down"></span></a>
-                  <ul class="nav child_menu" style="display: none">
-                  
-                    <li><a href="<spring:url value="/user/add_user"/>">Add User</a>
-                    </li>
-                    <li><a href="<spring:url value="/user/allUsers"/>">View Users</a>
-                    </li>
-                  </ul>
-                </li>
+                <c:if test="${userSession.accountInfo.roleID eq 1}">
+                	<li><a><i class="fa fa-edit"></i> User Settings <span class="fa fa-chevron-down"></span></a>
+	                  <ul class="nav child_menu" style="display: none">
+	                  
+	                    <li><a href="<spring:url value="/user/add_user"/>">Add User</a>
+	                    </li>
+	                    <li><a href="<spring:url value="/user/allUsers"/>">View Users</a>
+	                    </li>
+	                  </ul>
+	                </li>
+                </c:if>
+                
                 
               </ul>
             </div>
@@ -154,7 +168,7 @@
             <ul class="nav navbar-nav navbar-right">
               <li class="">
                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                  <img src="images/img.jpg" alt="">Bikalpa Dhakal
+                  <img src="${pageContext.request.contextPath }/resources/images/img.jpg" alt="">${userSession }
                   <span class=" fa fa-angle-down"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
@@ -169,7 +183,7 @@
                   <li>
                     <a href="javascript:;">Help</a>
                   </li>
-                  <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                  <li><a href='<spring:url value="/logout"/>'> <i class="fa fa-sign-out pull-right"></i> Log Out</a>
                   </li>
                 </ul>
               </li>

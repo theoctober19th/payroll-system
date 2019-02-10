@@ -7,5 +7,9 @@ import com.spring.payroll.entities.User;
 
 public interface StaffService {
 	public boolean createStaff(Staff staff);
+	public List<Staff> getAllStaffs();
+	public int getStaffCount();
+	public Staff getStaffByCode(String code);
+	public boolean updateStaff(String code, Staff staff);
 	
 }

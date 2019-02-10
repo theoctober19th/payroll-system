@@ -29,5 +29,11 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	
+<!-- 	<filter> -->
+<!-- 	  <filter-name>CheckLoginFilter</filter-name> -->
+<!-- 	  <filter-class>com.spring.payroll.filters.CheckLoginFilter</filter-class> -->
+<!-- 	</filter> -->
+	
 
 </web-app>

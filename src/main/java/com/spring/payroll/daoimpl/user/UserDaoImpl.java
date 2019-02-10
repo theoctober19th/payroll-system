@@ -8,6 +8,7 @@ import javax.sql.DataSource;
 
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -16,11 +17,13 @@ import org.springframework.stereotype.Repository;
 
 import com.spring.payroll.dao.user.UserDao;
 import com.spring.payroll.entities.User;
+import com.spring.payroll.entities.UserLogin;
 import com.spring.payroll.utils.mapper.UserMapper;
 
 @Repository
 public class UserDaoImpl implements UserDao {
-private NamedParameterJdbcTemplate template;
+	
+	private NamedParameterJdbcTemplate template;
 
 	String query;
 	
@@ -159,10 +162,20 @@ private NamedParameterJdbcTemplate template;
 		return true;
 	}
 
-//	@Override
-//	public boolean createUser() {
-//		String query="";
-//		return template.update(sql, paramMap);
-//	}
+
+
+	@Override
+	public int getCount() {
+		query = "SELECT COUNT(*) FROM user_info";
+		return template.queryForInt(query, new HashMap());
+	}
+
+	@Override
+	public UserLogin getUserLoginInfo(String username) {
+		query = "SELECT * FROM user_login_info WHERE username = :username";
+		SqlParameterSource params = new MapSqlParameterSource("username", username);
+		return template.queryForObject(query,params, new BeanPropertyRowMapper(UserLogin.class));
+	}
+
 
 }

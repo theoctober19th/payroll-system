@@ -10,4 +10,7 @@ public interface UserService {
 	public User getUserByID(int id);
 	public boolean updateUser(int id, User user);
 	public boolean deleteUser(int id);
+	public int getUsersCount();
+	public boolean verifyUser(String username, String password);
+	public User getUserByUsername(String username);
 }

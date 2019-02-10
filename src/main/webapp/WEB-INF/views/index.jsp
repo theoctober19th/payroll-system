@@ -1,3 +1,14 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ page import="com.spring.payroll.entities.User" %>
+
+<%
+session = request.getSession(false);
+User user = (User) session.getAttribute("userSession");
+if(user != null){
+	response.sendRedirect(request.getContextPath() + "/home");
+}
+%>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -34,13 +45,13 @@
     </head>
     <body>
         <div class="login-form">
-            <form action="" method="post">
+            <form action="<spring:url value='/login'/>" method="post">
                 <h2 class="text-center">Log in</h2>       
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Username" required="required">
+                    <input type="text" class="form-control" placeholder="Username" required="required" name="username">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Password" required="required">
+                    <input type="password" class="form-control" placeholder="Password" required="required" name="password">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-block">Log in</button>

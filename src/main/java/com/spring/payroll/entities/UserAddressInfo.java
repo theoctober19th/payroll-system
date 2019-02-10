@@ -99,18 +99,18 @@ public class UserAddressInfo {
 		this.streetAddress = streetAddress;
 	}
 
-	@Override
-	public String toString() {
-		return "UserAddressInfo [id=" + id + ", provinceID=" + provinceID + ", provinceName=" + provinceName
-				+ ", districtID=" + districtID + ", districtName=" + districtName + ", villageMunicipalityID="
-				+ villageMunicipalityID + ", villageMunicipality=" + villageMunicipality + ", localBodyType="
-				+ localBodyType + ", wardNumber=" + wardNumber + ", streetAddress=" + streetAddress + "]";
-	}
-
 //	@Override
-//	public String toString() {		
-//		return villageMunicipality + "-" + wardNumber + ", " + districtName + ", " + provinceName;
+//	public String toString() {
+//		return "UserAddressInfo [id=" + id + ", provinceID=" + provinceID + ", provinceName=" + provinceName
+//				+ ", districtID=" + districtID + ", districtName=" + districtName + ", villageMunicipalityID="
+//				+ villageMunicipalityID + ", villageMunicipality=" + villageMunicipality + ", localBodyType="
+//				+ localBodyType + ", wardNumber=" + wardNumber + ", streetAddress=" + streetAddress + "]";
 //	}
+
+	@Override
+	public String toString() {		
+		return villageMunicipality + "-" + wardNumber + ", " + districtName + ", " + provinceName;
+	}
 	
 	
 	

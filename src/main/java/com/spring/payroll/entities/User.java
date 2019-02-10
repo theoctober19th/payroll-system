@@ -18,6 +18,7 @@ public class User {
 	private UserLogin loginInfo;
 	private UserAccount accountInfo;
 	
+	
 	public User() {
 		// TODO Auto-generated constructor stub
 	}
@@ -167,10 +168,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", firstName=" + firstName + ", middleName=" + middleName + ", lastName=" + lastName
-				+ ", addressID=" + addressID + ", sex=" + sex + ", phoneNumber=" + phoneNumber + ", dateOfBirth="
-				+ dateOfBirth + ", createdDate=" + createdDate + ", email=" + email + ", addressInfo=" + addressInfo
-				+ ", loginInfo=" + loginInfo + "]";
+		return firstName + " " + middleName + " " + lastName;
 	}
 
 	

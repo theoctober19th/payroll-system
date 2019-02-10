@@ -1,5 +1,6 @@
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <tags:header title="Office Settings"/>
 
@@ -11,6 +12,7 @@
 
       <div class="card" style="width: 32rem;">
         <div class="card-body">
+       
           <form action='<spring:url value="/updateOfficeSettings"></spring:url>' method="post">
             <div class="row">
               <div class="form-group">

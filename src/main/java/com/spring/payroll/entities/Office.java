@@ -1,10 +1,19 @@
 package com.spring.payroll.entities;
 
+import javax.validation.constraints.NotNull;
+
 public class Office {
 
+	@NotNull(message="is required")
 	private int officeCode;
+	
+	@NotNull(message="is required")
 	private String officeName;
+	
+	@NotNull(message="is required")
 	private String officeAddress;
+	
+	@NotNull(message="is required")
 	private double regGovtDiscountAmt;
 	
 	

@@ -3,6 +3,8 @@ package com.spring.payroll.controller;
 import java.util.List;
 import java.util.Locale;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.spring.payroll.entities.District;
 import com.spring.payroll.entities.Province;
@@ -49,47 +52,92 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/allUsers", method = RequestMethod.GET)
-	public String listUsers(@ModelAttribute User user, Model model) {
-		List<User> userList = userService.getAllUsers();
-		model.addAttribute("userList", userList);
+	public String listUsers(Model model, HttpSession session) {
+		User currentUser = (User) session.getAttribute("userSession");
 		
-		//userService.createUser(user);
-		return "user_settings/list_users";
+		if(currentUser != null) {
+			int roleID = currentUser.getAccountInfo().getRoleID();
+			if(roleID == 1) {
+				List<User> userList = userService.getAllUsers();
+				model.addAttribute("userList", userList);
+				
+				
+				
+				//userService.createUser(user);
+				return "user_settings/list_users";
+			}else {
+				return "page_401";
+			} 
+		}else {
+			return "redirect:/";
+		}
+		
 	}
 	
 	@RequestMapping(value = "/editUser/{id}", method = RequestMethod.GET)
-	public String editUser(@PathVariable int id, Model model) {
-		User user = userService.getUserByID(id);
-		model.addAttribute(user);
-		List<District> districtList = addressService.getAllDistricts();
-		List<Province> provinceList = addressService.getAllProvinces();
-		model.addAttribute("districtList", districtList);
-		model.addAttribute("provinceList", provinceList);
-		return "user_settings/edit_user";
+	public String editUser(@PathVariable int id, Model model, HttpSession session) {
+				
+		User currentUser = (User) session.getAttribute("userSession");
+		
+		if(currentUser != null) {
+			int roleID = currentUser.getAccountInfo().getRoleID();
+			if(roleID == 1) {
+				User user = userService.getUserByID(id);
+				model.addAttribute(user);
+				List<District> districtList = addressService.getAllDistricts();
+				List<Province> provinceList = addressService.getAllProvinces();
+				model.addAttribute("districtList", districtList);
+				model.addAttribute("provinceList", provinceList);
+				return "user_settings/edit_user";
+				
+			}else {
+				return "page_401";
+			} 
+		}else {
+			return "redirect:/";
+		}
 	}
 	
 	@RequestMapping(value = "/updateUser/{id}", method = RequestMethod.POST)
-	public String updateUser(@PathVariable int id, @ModelAttribute User user, Model model) {
+	public String updateUser(@PathVariable int id, @ModelAttribute User user, Model model, HttpSession session) {
 		
-//		User user = userService.getUserByID(id);
-//		model.addAttribute(user);
-//		List<District> districtList = addressService.getAllDistricts();
-//		List<Province> provinceList = addressService.getAllProvinces();
-//		model.addAttribute("districtList", districtList);
-//		model.addAttribute("provinceList", provinceList);
-//		return "user_settings/edit_user";
+		User currentUser = (User) session.getAttribute("userSession");
 		
-		userService.updateUser(id, user);
+		if(currentUser != null) {
+			int roleID = currentUser.getAccountInfo().getRoleID();
+			if(roleID == 1) {
+				userService.updateUser(id, user);
+				
+				return "redirect:/user/allUsers";
+
+			}else {
+				return "page_401";
+			} 
+		}else {
+			return "redirect:/";
+		}
 		
-		return "redirect:/user/allUsers";
 		
 	}
 	
 	@RequestMapping(value="/deleteUser/{id}", method=RequestMethod.GET)
-	public String deleteUser(@PathVariable int id) {
+	public String deleteUser(@PathVariable int id, HttpSession session) {
 		
-		userService.deleteUser(id);
-		return "redirect:/user/allUsers";
+		User currentUser = (User) session.getAttribute("userSession");
+		
+		if(currentUser != null) {
+			int roleID = currentUser.getAccountInfo().getRoleID();
+			if(roleID == 1) {
+				userService.deleteUser(id);
+				return "redirect:/user/allUsers";
+			}else {
+				return "page_401";
+			} 
+		}else {
+			return "redirect:/";
+		}
+		
+
 	}
 	
 }

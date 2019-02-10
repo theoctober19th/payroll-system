@@ -8,4 +8,5 @@ public interface Dao<T> {
 	int create(T t);
 	boolean update(long id, T t);
 	boolean delete(long id);
+	int getCount();
 }

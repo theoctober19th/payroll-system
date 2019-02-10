@@ -8,4 +8,5 @@ public interface OfficeDao {
 	public int createOrUpdateOffice(Office office);
 	public boolean addOrUpdateDivision(Division division);
 	public boolean addOrUpdateBranch(Branch branch);
+	public int getBranchCount();
 }
