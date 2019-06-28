@@ -1,1 +1,4 @@
 src/main/webapp/* linguist-vendored
+*.java linguist-language=Java
+*.jsp linguist-language=Java
+*.css linguist-language=Java
